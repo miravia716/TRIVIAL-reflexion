@@ -50,17 +50,16 @@
       font-weight: bold;
       font-size: 1.1em;
       color: #003366;
-      min-height: 60px;
     }
     #nextBtn {
-      margin-top: 15px;
+      margin-top: 20px;
       padding: 10px 20px;
+      font-size: 1em;
       background-color: #0059b3;
       color: white;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 1em;
       display: none;
     }
     #nextBtn:hover {
@@ -76,7 +75,7 @@
     <div class="result" id="result"></div>
     <button id="nextBtn">Siguiente</button>
   </div>
-
+  
   <script>
     const questions = [
       {
@@ -278,62 +277,12 @@
           "Perder el rumbo"
         ],
         answer: 2
-      },
-      {
-        question: "¿Qué enseña el silencio interior?",
-        options: [
-          "A desconectarse del mundo",
-          "A suprimir emociones",
-          "A escuchar la sabiduría interna",
-          "A controlar a otros"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Por qué es valiosa la vulnerabilidad?",
-        options: [
-          "Porque demuestra debilidad",
-          "Porque permite conectar genuinamente con otros",
-          "Porque protege del dolor",
-          "Porque genera lástima"
-        ],
-        answer: 1
-      },
-      {
-        question: "¿Qué papel tiene el ego en el sufrimiento?",
-        options: [
-          "Es la causa principal de muchos sufrimientos",
-          "Ayuda a encontrar la verdad",
-          "Nos protege del mundo",
-          "Fomenta la empatía"
-        ],
-        answer: 0
-      },
-      {
-        question: "¿Cuál es la esencia del desapego?",
-        options: [
-          "No amar a nada ni a nadie",
-          "Ignorar las emociones",
-          "Amar sin poseer",
-          "Aislarse del mundo"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Por qué es importante cuestionar nuestras creencias?",
-        options: [
-          "Para perder la identidad",
-          "Para complacer a los demás",
-          "Para evolucionar y expandir la conciencia",
-          "Para ser aceptado socialmente"
-        ],
-        answer: 2
       }
     ];
 
     let current = 0;
     let correctCount = 0;
-    let wrongCount = 0;
+
     const questionEl = document.getElementById('question');
     const answersEl = document.getElementById('answers');
     const resultEl = document.getElementById('result');
@@ -355,18 +304,17 @@
     }
 
     function checkAnswer(index) {
-      const isCorrect = index === questions[current].answer;
+      const q = questions[current];
+      const isCorrect = index === q.answer;
 
-      // Bloquear botones para no permitir más clicks
+      if (isCorrect) correctCount++;
+
+      resultEl.innerHTML = isCorrect 
+        ? "¡Correcto!" 
+        : `Incorrecto. La respuesta correcta es: <strong>${q.options[q.answer]}</strong>`;
+
+      // Desactivar botones para evitar más clicks
       Array.from(answersEl.children).forEach(btn => btn.disabled = true);
-
-      if (isCorrect) {
-        correctCount++;
-        resultEl.textContent = "¡Correcto!";
-      } else {
-        wrongCount++;
-        resultEl.textContent = "Incorrecto. La respuesta correcta es: " + questions[current].options[questions[current].answer];
-      }
       nextBtn.style.display = 'inline-block';
     }
 
@@ -375,13 +323,12 @@
       if (current < questions.length) {
         showQuestion();
       } else {
-        questionEl.textContent = "Juego terminado.";
+        questionEl.textContent = "¡Trivia terminada!";
         answersEl.innerHTML = '';
         nextBtn.style.display = 'none';
         resultEl.innerHTML = `
-          <p>Respuestas correctas: <strong>${correctCount}</strong></p>
-          <p>Respuestas incorrectas: <strong>${wrongCount}</strong></p>
-          <p>¡Gracias por jugar!</p>
+          <p>Has acertado <strong>${correctCount}</strong> de <strong>${questions.length}</strong> preguntas.</p>
+          <p>¡Gracias por participar!</p>
         `;
       }
     };
