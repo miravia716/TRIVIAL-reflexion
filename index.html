@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trivia de Reflexiones de la Vida</title>
   <style>
     body {
@@ -51,6 +51,20 @@
       font-size: 1.1em;
       color: #003366;
     }
+    #next-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background-color: #0073e6;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      display: none;
+    }
+    #next-btn:hover {
+      background-color: #005bb5;
+    }
   </style>
 </head>
 <body>
@@ -59,293 +73,76 @@
     <div class="question" id="question"></div>
     <div class="answers" id="answers"></div>
     <div class="result" id="result"></div>
+    <button id="next-btn" onclick="nextQuestion()">Siguiente pregunta</button>
   </div>
 
   <script>
     const questions = [
       {
         question: "¿Qué significa realmente vivir en el presente?",
-        options: [
-          "Ignorar el pasado y el futuro",
-          "Disfrutar y aceptar el momento actual",
-          "Solo hacer planes para el futuro",
-          "Evitar todo tipo de preocupaciones"
-        ],
+        options: ["Ignorar el pasado y el futuro", "Disfrutar y aceptar el momento actual", "Solo hacer planes para el futuro", "Evitar todo tipo de preocupaciones"],
         answer: 1
       },
       {
         question: "¿Qué valor se encuentra al enfrentar dificultades?",
-        options: [
-          "Evitar el dolor a toda costa",
-          "Volverse emocionalmente insensible",
-          "Fortalecimiento del carácter y crecimiento",
-          "Demostrar superioridad ante otros"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué significa la autenticidad personal?",
-        options: [
-          "Seguir modas para encajar",
-          "Decir siempre lo que otros quieren oír",
-          "Ser uno mismo sin máscaras",
-          "Imitar a quien admiras"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué enseña la soledad?",
-        options: [
-          "Que siempre necesitas compañía",
-          "Cómo distraerte del dolor",
-          "A conectar contigo mismo",
-          "Que el mundo es injusto"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Cuál es el poder del perdón?",
-        options: [
-          "Mostrar debilidad",
-          "Liberarte del rencor",
-          "Ignorar los errores",
-          "Repetir los mismos conflictos"
-        ],
-        answer: 1
-      },
-      {
-        question: "¿Qué aporta el silencio en la vida?",
-        options: [
-          "Evita la confrontación",
-          "Genera incomodidad",
-          "Fomenta la introspección y claridad",
-          "Te hace parecer débil"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué refleja la gratitud diaria?",
-        options: [
-          "Conformismo",
-          "Obligación social",
-          "Reconocimiento del valor de la vida",
-          "Falsa felicidad"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Por qué es importante el propósito de vida?",
-        options: [
-          "Para ser mejor que los demás",
-          "Para tener éxito económico",
-          "Para guiar tus acciones y decisiones",
-          "Para impresionar a otros"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué enseña el fracaso?",
-        options: [
-          "Que no vales",
-          "Que debes rendirte",
-          "Lecciones para mejorar",
-          "A evitar nuevos retos"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué implica aceptar la impermanencia?",
-        options: [
-          "No aferrarse a nada y valorar el presente",
-          "Temer al cambio",
-          "Luchar por controlar todo",
-          "Evitar los vínculos"
-        ],
-        answer: 0
-      },
-      {
-        question: "¿Qué significa crecer espiritualmente?",
-        options: [
-          "Leer libros de autoayuda",
-          "Evitar relaciones tóxicas",
-          "Conocerse a sí mismo y actuar con conciencia",
-          "Alcanzar el éxito profesional"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué revela cómo reaccionamos ante la adversidad?",
-        options: [
-          "Nuestra suerte",
-          "Nuestra madurez emocional",
-          "Nuestro entorno",
-          "El poder de los demás sobre nosotros"
-        ],
-        answer: 1
-      },
-      {
-        question: "¿Qué papel juega la incertidumbre en la vida?",
-        options: [
-          "Es algo que debe evitarse a toda costa",
-          "Es un obstáculo para la felicidad",
-          "Es parte esencial del crecimiento y la libertad",
-          "Solo trae caos y ansiedad"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué valor tiene el sufrimiento consciente?",
-        options: [
-          "Ninguno, debe eliminarse siempre",
-          "Despierta compasión y profundidad",
-          "Demuestra superioridad emocional",
-          "Es señal de debilidad"
-        ],
-        answer: 1
-      },
-      {
-        question: "¿Qué implica tener una mente abierta?",
-        options: [
-          "Aceptar todas las ideas sin cuestionar",
-          "Tolerar el caos",
-          "Estar dispuesto a desaprender y aprender continuamente",
-          "Cambiar de opinión constantemente"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Cuál es el sentido de la autocompasión?",
-        options: [
-          "Evitar responsabilidades",
-          "Reforzar el ego",
-          "Ofrecerte comprensión sin juzgarte",
-          "Manipular a otros con tu dolor"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué nos enseña la muerte sobre la vida?",
-        options: [
-          "Que todo esfuerzo es inútil",
-          "Que debemos aprovechar cada momento",
-          "Que no vale la pena arriesgarse",
-          "Que debemos temer constantemente"
-        ],
-        answer: 1
-      },
-      {
-        question: "¿Por qué es importante la coherencia interna?",
-        options: [
-          "Para agradar a los demás",
-          "Para evitar conflictos externos",
-          "Para vivir con paz y autenticidad",
-          "Para no ser criticado"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué significa realmente el éxito personal?",
-        options: [
-          "Tener más que los demás",
-          "Lograr objetivos impuestos por otros",
-          "Vivir de acuerdo con tus valores",
-          "Evitar el fracaso a toda costa"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué se logra al dejar ir el control?",
-        options: [
-          "Fracaso y caos",
-          "Falta de metas",
-          "Paz y adaptabilidad",
-          "Perder el rumbo"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Qué enseña el silencio interior?",
-        options: [
-          "A desconectarse del mundo",
-          "A suprimir emociones",
-          "A escuchar la sabiduría interna",
-          "A controlar a otros"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Por qué es valiosa la vulnerabilidad?",
-        options: [
-          "Porque demuestra debilidad",
-          "Porque permite conectar genuinamente con otros",
-          "Porque protege del dolor",
-          "Porque genera lástima"
-        ],
-        answer: 1
-      },
-      {
-        question: "¿Qué papel tiene el ego en el sufrimiento?",
-        options: [
-          "Es la causa principal de muchos sufrimientos",
-          "Ayuda a encontrar la verdad",
-          "Nos protege del mundo",
-          "Fomenta la empatía"
-        ],
-        answer: 0
-      },
-      {
-        question: "¿Cuál es la esencia del desapego?",
-        options: [
-          "No amar a nada ni a nadie",
-          "Ignorar las emociones",
-          "Amar sin poseer",
-          "Aislarse del mundo"
-        ],
-        answer: 2
-      },
-      {
-        question: "¿Por qué es importante cuestionar nuestras creencias?",
-        options: [
-          "Para perder la identidad",
-          "Para complacer a los demás",
-          "Para evolucionar y expandir la conciencia",
-          "Para ser aceptado socialmente"
-        ],
+        options: ["Evitar el dolor a toda costa", "Volverse emocionalmente insensible", "Fortalecimiento del carácter y crecimiento", "Demostrar superioridad ante otros"],
         answer: 2
       }
+      // Agrega más preguntas aquí si quieres...
     ];
 
     let current = 0;
     const questionEl = document.getElementById('question');
     const answersEl = document.getElementById('answers');
     const resultEl = document.getElementById('result');
+    const nextBtn = document.getElementById('next-btn');
 
     function showQuestion() {
       const q = questions[current];
       questionEl.textContent = q.question;
       answersEl.innerHTML = '';
       resultEl.textContent = '';
+      nextBtn.style.display = 'none';
 
       q.options.forEach((opt, i) => {
         const btn = document.createElement('button');
         btn.textContent = opt;
-        btn.onclick = () => checkAnswer(i);
+        btn.onclick = () => checkAnswer(i, btn);
         answersEl.appendChild(btn);
       });
     }
 
-    function checkAnswer(index) {
-      const isCorrect = index === questions[current].answer;
-      resultEl.textContent = isCorrect ? "¡Correcto!" : "Incorrecto. La respuesta correcta es: " + questions[current].options[questions[current].answer];
+    function checkAnswer(index, clickedButton) {
+      const correctIndex = questions[current].answer;
+      const buttons = answersEl.querySelectorAll('button');
+
+      buttons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === correctIndex) {
+          btn.style.backgroundColor = '#b3ffb3'; // verde para la correcta
+        } else if (i === index) {
+          btn.style.backgroundColor = '#ffb3b3'; // rojo si fue incorrecta
+        }
+      });
+
+      if (index === correctIndex) {
+        resultEl.textContent = "¡Correcto!";
+      } else {
+        resultEl.textContent = "Incorrecto. La respuesta correcta es: " + questions[current].options[correctIndex];
+      }
+
+      nextBtn.style.display = 'inline-block';
+    }
+
+    function nextQuestion() {
       current++;
       if (current < questions.length) {
-        setTimeout(showQuestion, 2000);
+        showQuestion();
       } else {
-        setTimeout(() => {
-          questionEl.textContent = "Juego terminado.";
-          answersEl.innerHTML = '';
-          resultEl.textContent = '';
-        }, 2500);
+        questionEl.textContent = "Juego terminado.";
+        answersEl.innerHTML = '';
+        resultEl.textContent = '';
+        nextBtn.style.display = 'none';
       }
     }
 
