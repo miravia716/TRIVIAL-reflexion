@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +59,9 @@
     <div class="question" id="question"></div>
     <div class="answers" id="answers"></div>
     <div class="result" id="result"></div>
-  </div>  <script>
+  </div>
+
+  <script>
     const questions = [
       {
         question: "¿Qué significa realmente vivir en el presente?",
@@ -159,307 +162,158 @@
           "Evitar los vínculos"
         ],
         answer: 0
+      },
+      {
+        question: "¿Qué significa crecer espiritualmente?",
+        options: [
+          "Leer libros de autoayuda",
+          "Evitar relaciones tóxicas",
+          "Conocerse a sí mismo y actuar con conciencia",
+          "Alcanzar el éxito profesional"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Qué revela cómo reaccionamos ante la adversidad?",
+        options: [
+          "Nuestra suerte",
+          "Nuestra madurez emocional",
+          "Nuestro entorno",
+          "El poder de los demás sobre nosotros"
+        ],
+        answer: 1
+      },
+      {
+        question: "¿Qué papel juega la incertidumbre en la vida?",
+        options: [
+          "Es algo que debe evitarse a toda costa",
+          "Es un obstáculo para la felicidad",
+          "Es parte esencial del crecimiento y la libertad",
+          "Solo trae caos y ansiedad"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Qué valor tiene el sufrimiento consciente?",
+        options: [
+          "Ninguno, debe eliminarse siempre",
+          "Despierta compasión y profundidad",
+          "Demuestra superioridad emocional",
+          "Es señal de debilidad"
+        ],
+        answer: 1
+      },
+      {
+        question: "¿Qué implica tener una mente abierta?",
+        options: [
+          "Aceptar todas las ideas sin cuestionar",
+          "Tolerar el caos",
+          "Estar dispuesto a desaprender y aprender continuamente",
+          "Cambiar de opinión constantemente"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Cuál es el sentido de la autocompasión?",
+        options: [
+          "Evitar responsabilidades",
+          "Reforzar el ego",
+          "Ofrecerte comprensión sin juzgarte",
+          "Manipular a otros con tu dolor"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Qué nos enseña la muerte sobre la vida?",
+        options: [
+          "Que todo esfuerzo es inútil",
+          "Que debemos aprovechar cada momento",
+          "Que no vale la pena arriesgarse",
+          "Que debemos temer constantemente"
+        ],
+        answer: 1
+      },
+      {
+        question: "¿Por qué es importante la coherencia interna?",
+        options: [
+          "Para agradar a los demás",
+          "Para evitar conflictos externos",
+          "Para vivir con paz y autenticidad",
+          "Para no ser criticado"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Qué significa realmente el éxito personal?",
+        options: [
+          "Tener más que los demás",
+          "Lograr objetivos impuestos por otros",
+          "Vivir de acuerdo con tus valores",
+          "Evitar el fracaso a toda costa"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Qué se logra al dejar ir el control?",
+        options: [
+          "Fracaso y caos",
+          "Falta de metas",
+          "Paz y adaptabilidad",
+          "Perder el rumbo"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Qué enseña el silencio interior?",
+        options: [
+          "A desconectarse del mundo",
+          "A suprimir emociones",
+          "A escuchar la sabiduría interna",
+          "A controlar a otros"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Por qué es valiosa la vulnerabilidad?",
+        options: [
+          "Porque demuestra debilidad",
+          "Porque permite conectar genuinamente con otros",
+          "Porque protege del dolor",
+          "Porque genera lástima"
+        ],
+        answer: 1
+      },
+      {
+        question: "¿Qué papel tiene el ego en el sufrimiento?",
+        options: [
+          "Es la causa principal de muchos sufrimientos",
+          "Ayuda a encontrar la verdad",
+          "Nos protege del mundo",
+          "Fomenta la empatía"
+        ],
+        answer: 0
+      },
+      {
+        question: "¿Cuál es la esencia del desapego?",
+        options: [
+          "No amar a nada ni a nadie",
+          "Ignorar las emociones",
+          "Amar sin poseer",
+          "Aislarse del mundo"
+        ],
+        answer: 2
+      },
+      {
+        question: "¿Por qué es importante cuestionar nuestras creencias?",
+        options: [
+          "Para perder la identidad",
+          "Para complacer a los demás",
+          "Para evolucionar y expandir la conciencia",
+          "Para ser aceptado socialmente"
+        ],
+        answer: 2
       }
-{
-  question: "¿Qué significa crecer espiritualmente?",
-  options: [
-    "Leer libros de autoayuda",
-    "Evitar relaciones tóxicas",
-    "Conocerse a sí mismo y actuar con conciencia",
-    "Alcanzar el éxito profesional"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué revela cómo reaccionamos ante la adversidad?",
-  options: [
-    "Nuestra suerte",
-    "Nuestra madurez emocional",
-    "Nuestro entorno",
-    "El poder de los demás sobre nosotros"
-  ],
-  answer: 1
-},
-{
-  question: "¿Qué papel juega la incertidumbre en la vida?",
-  options: [
-    "Es algo que debe evitarse a toda costa",
-    "Es un obstáculo para la felicidad",
-    "Es parte esencial del crecimiento y la libertad",
-    "Solo trae caos y ansiedad"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué valor tiene el sufrimiento consciente?",
-  options: [
-    "Ninguno, debe eliminarse siempre",
-    "Despierta compasión y profundidad",
-    "Demuestra superioridad emocional",
-    "Es señal de debilidad"
-  ],
-  answer: 1
-},
-{
-  question: "¿Qué implica tener una mente abierta?",
-  options: [
-    "Aceptar todas las ideas sin cuestionar",
-    "Tolerar el caos",
-    "Estar dispuesto a desaprender y aprender continuamente",
-    "Cambiar de opinión constantemente"
-  ],
-  answer: 2
-},
-{
-  question: "¿Cuál es el sentido de la autocompasión?",
-  options: [
-    "Evitar responsabilidades",
-    "Reforzar el ego",
-    "Ofrecerte comprensión sin juzgarte",
-    "Manipular a otros con tu dolor"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué nos enseña la muerte sobre la vida?",
-  options: [
-    "Que todo esfuerzo es inútil",
-    "Que debemos aprovechar cada momento",
-    "Que no vale la pena arriesgarse",
-    "Que debemos temer constantemente"
-  ],
-  answer: 1
-},
-{
-  question: "¿Por qué es importante la coherencia interna?",
-  options: [
-    "Para agradar a los demás",
-    "Para evitar conflictos externos",
-    "Para vivir con paz y autenticidad",
-    "Para no ser criticado"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué significa realmente el éxito personal?",
-  options: [
-    "Tener más que los demás",
-    "Lograr objetivos impuestos por otros",
-    "Vivir de acuerdo con tus valores",
-    "Evitar el fracaso a toda costa"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué se logra al dejar ir el control?",
-  options: [
-    "Fracaso y caos",
-    "Falta de metas",
-    "Paz y adaptabilidad",
-    "Perder el rumbo"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué enseña el silencio interior?",
-  options: [
-    "A desconectarse del mundo",
-    "A suprimir emociones",
-    "A escuchar la sabiduría interna",
-    "A controlar a otros"
-  ],
-  answer: 2
-},
-{
-  question: "¿Por qué es valiosa la vulnerabilidad?",
-  options: [
-    "Porque demuestra debilidad",
-    "Porque permite conectar genuinamente con otros",
-    "Porque protege del dolor",
-    "Porque genera lástima"
-  ],
-  answer: 1
-},
-{
-  question: "¿Qué papel tiene el ego en el sufrimiento?",
-  options: [
-    "Es la causa principal de muchos sufrimientos",
-    "Ayuda a encontrar la verdad",
-    "Nos protege del mundo",
-    "Fomenta la empatía"
-  ],
-  answer: 0
-},
-{
-  question: "¿Cuál es la esencia del desapego?",
-  options: [
-    "No amar a nada ni a nadie",
-    "Ignorar las emociones",
-    "Amar sin poseer",
-    "Aislarse del mundo"
-  ],
-  answer: 2
-},
-{
-  question: "¿Por qué es importante cuestionar nuestras creencias?",
-  options: [
-    "Para perder la identidad",
-    "Para complacer a los demás",
-    "Para evolucionar y expandir la conciencia",
-    "Para ser aceptado socialmente"
-  ],
-  answer: 2
-}
-    {
-  question: "¿Qué significa crecer espiritualmente?",
-  options: [
-    "Leer libros de autoayuda",
-    "Evitar relaciones tóxicas",
-    "Conocerse a sí mismo y actuar con conciencia",
-    "Alcanzar el éxito profesional"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué revela cómo reaccionamos ante la adversidad?",
-  options: [
-    "Nuestra suerte",
-    "Nuestra madurez emocional",
-    "Nuestro entorno",
-    "El poder de los demás sobre nosotros"
-  ],
-  answer: 1
-},
-{
-  question: "¿Qué papel juega la incertidumbre en la vida?",
-  options: [
-    "Es algo que debe evitarse a toda costa",
-    "Es un obstáculo para la felicidad",
-    "Es parte esencial del crecimiento y la libertad",
-    "Solo trae caos y ansiedad"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué valor tiene el sufrimiento consciente?",
-  options: [
-    "Ninguno, debe eliminarse siempre",
-    "Despierta compasión y profundidad",
-    "Demuestra superioridad emocional",
-    "Es señal de debilidad"
-  ],
-  answer: 1
-},
-{
-  question: "¿Qué implica tener una mente abierta?",
-  options: [
-    "Aceptar todas las ideas sin cuestionar",
-    "Tolerar el caos",
-    "Estar dispuesto a desaprender y aprender continuamente",
-    "Cambiar de opinión constantemente"
-  ],
-  answer: 2
-},
-{
-  question: "¿Cuál es el sentido de la autocompasión?",
-  options: [
-    "Evitar responsabilidades",
-    "Reforzar el ego",
-    "Ofrecerte comprensión sin juzgarte",
-    "Manipular a otros con tu dolor"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué nos enseña la muerte sobre la vida?",
-  options: [
-    "Que todo esfuerzo es inútil",
-    "Que debemos aprovechar cada momento",
-    "Que no vale la pena arriesgarse",
-    "Que debemos temer constantemente"
-  ],
-  answer: 1
-},
-{
-  question: "¿Por qué es importante la coherencia interna?",
-  options: [
-    "Para agradar a los demás",
-    "Para evitar conflictos externos",
-    "Para vivir con paz y autenticidad",
-    "Para no ser criticado"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué significa realmente el éxito personal?",
-  options: [
-    "Tener más que los demás",
-    "Lograr objetivos impuestos por otros",
-    "Vivir de acuerdo con tus valores",
-    "Evitar el fracaso a toda costa"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué se logra al dejar ir el control?",
-  options: [
-    "Fracaso y caos",
-    "Falta de metas",
-    "Paz y adaptabilidad",
-    "Perder el rumbo"
-  ],
-  answer: 2
-},
-{
-  question: "¿Qué enseña el silencio interior?",
-  options: [
-    "A desconectarse del mundo",
-    "A suprimir emociones",
-    "A escuchar la sabiduría interna",
-    "A controlar a otros"
-  ],
-  answer: 2
-},
-{
-  question: "¿Por qué es valiosa la vulnerabilidad?",
-  options: [
-    "Porque demuestra debilidad",
-    "Porque permite conectar genuinamente con otros",
-    "Porque protege del dolor",
-    "Porque genera lástima"
-  ],
-  answer: 1
-},
-{
-  question: "¿Qué papel tiene el ego en el sufrimiento?",
-  options: [
-    "Es la causa principal de muchos sufrimientos",
-    "Ayuda a encontrar la verdad",
-    "Nos protege del mundo",
-    "Fomenta la empatía"
-  ],
-  answer: 0
-},
-{
-  question: "¿Cuál es la esencia del desapego?",
-  options: [
-    "No amar a nada ni a nadie",
-    "Ignorar las emociones",
-    "Amar sin poseer",
-    "Aislarse del mundo"
-  ],
-  answer: 2
-},
-{
-  question: "¿Por qué es importante cuestionar nuestras creencias?",
-  options: [
-    "Para perder la identidad",
-    "Para complacer a los demás",
-    "Para evolucionar y expandir la conciencia",
-    "Para ser aceptado socialmente"
-  ],
-  answer: 2
-}
+    ];
 
     let current = 0;
     const questionEl = document.getElementById('question');
@@ -490,10 +344,12 @@
         setTimeout(() => {
           questionEl.textContent = "Juego terminado.";
           answersEl.innerHTML = '';
+          resultEl.textContent = '';
         }, 2500);
       }
     }
 
     showQuestion();
-  </script></body>
+  </script>
+</body>
 </html>
